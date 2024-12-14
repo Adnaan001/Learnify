@@ -23,7 +23,7 @@ export default function IndexMyCourses(){
         dispatch(setCourse(null));
         dispatch(setStep(1));
         dispatch(setEditCourse(false))
-        console.log("runningggg....")
+        // console.log("runningggg....")
         if(result)
            setCourses(result.data.courses);
 

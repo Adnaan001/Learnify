@@ -9,11 +9,11 @@ require('dotenv').config();
 
 exports.createSubSection=async (req,res)=>{
     try{
-        console.log("creating SubSection....");
+        // console.log("creating SubSection....");
         const {title,description,duration,sectionId,courseId}=req.body;
-        console.log("req.files==>",req.files);
+        // console.log("req.files==>",req.files);
         const vidFile=req.files.vidFile;
-        console.log("duration==>",duration);
+        // console.log("duration==>",duration);
 
         if(!title || !description || !vidFile || !sectionId)
         {
@@ -143,7 +143,7 @@ exports.updateSubsection=async (req,res)=>{
             videoUrl = video.secure_url;
         }
 
-        console.log("duration==>",duration)
+        // console.log("duration==>",duration)
         const oldDuration=subSectionchk.duration;
         const newDuration=duration;
         const durationDifference=newDuration-oldDuration;

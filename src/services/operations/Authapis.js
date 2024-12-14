@@ -21,7 +21,7 @@ export function sendOtp(email,navigate){
                 email
             });
 
-            console.log("OTP RESPONSE==>",result);
+            // console.log("OTP RESPONSE==>",result);
 
             if(!(result.data.success))
             {
@@ -47,9 +47,9 @@ export function signup(firstName,lastName,email,password,confirmPassword,account
         const toastId=toast.loading('loading');
         try
         {
-            console.log('otp in signuppayload==>',otp);
+            // console.log('otp in signuppayload==>',otp);
             const result=await apiConnector('POST',SIGNUP_API,{firstName,lastName,email,password,confirmPassword,accountType,otp});
-            console.log("result signup==>",result);
+            // console.log("result signup==>",result);
 
             if(result.data?.message==="otp required")
                 dispatch(sendOtp(email,navigate));
@@ -138,7 +138,7 @@ export function resetPasswordToken(email, setEmailSent,navigate){
         try{
             
             const result=await apiConnector('POST',RESET_PASSWORD_TOKEN_API,{email});
-            console.log("resetpasswordtoken result==>",result);
+            // console.log("resetpasswordtoken result==>",result);
             dispatch(setMaskedEmail(maskEmail(email)));
             toast.success(result.data?.message);
             setEmailSent(true);
@@ -158,9 +158,9 @@ export function resetPassword(password,confirmPassword,navigate){
         const toastId=toast.loading('Loading..');
         try{
             const token=location.pathname.split('/').at(-1);
-            console.log("token==>",token);
+            // console.log("token==>",token);
             const result=await apiConnector('POST',RESET_PASSWORD_API,{token,password,confirmPassword});
-            console.log("resetpassword result==>",result);
+            // console.log("resetpassword result==>",result);
             toast.success(result.data?.message);
             navigate('/resetconfirmation');
         }catch(e){

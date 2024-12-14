@@ -30,7 +30,7 @@ export const LoginForm=()=>{
     function submitHandler(e)
     {
         e.preventDefault();
-        console.log("Login formData==>",formData);
+        // console.log("Login formData==>",formData);
         dispatch(login(formData.email,formData.password,navigate));
     }
     const [password,setPassword]=useState(true);

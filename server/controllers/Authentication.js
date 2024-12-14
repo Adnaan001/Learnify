@@ -94,7 +94,7 @@ exports.signup=async (req,res)=>{
                 }
             )
         }
-        console.log('otp in server==>',otp);
+        // console.log('otp in server==>',otp);
         if(!otp)
         {
             return res.status(200).json(
@@ -104,8 +104,8 @@ exports.signup=async (req,res)=>{
             )
         }
         const DB_otp=await Otp.findOne({email}).sort({createdAt:-1}).limit(1);
-        console.log('DB_OTP==>',DB_otp);
-        console.log('DB_otp==>',DB_otp.otp);
+        // console.log('DB_OTP==>',DB_otp);
+        // console.log('DB_otp==>',DB_otp.otp);
         if(!DB_otp)
         {
             return res.status(400).json(
@@ -241,7 +241,7 @@ exports.login=async (req,res)=>{
 
         try{
 
-            console.log(process.env.JWT_SECRET);
+            // console.log(process.env.JWT_SECRET);
             const token=await jwt.sign(payload,process.env.JWT_SECRET,{
                 expiresIn:'2h'
             });

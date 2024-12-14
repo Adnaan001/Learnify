@@ -7,7 +7,7 @@ const Subsection = require("../models/subsection");
 
 exports.createSection= async (req,res)=>{
     try{
-        console.log("create section backend API running...");
+        // console.log("create section backend API running...");
         const {sectionName,courseId}=req.body;
 
         if(!sectionName)

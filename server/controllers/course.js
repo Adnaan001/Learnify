@@ -9,7 +9,7 @@ const courseprogress = require('../models/courseprogress');
 
 exports.createCourse=async (req,res)=>{
     try{
-        console.log("Course creating..")
+        // console.log("Course creating..")
         const {title,description,price,category,tags,benefits,requirements}=req.body;
         const imgFile=req.files.imgFile;
         const userId=req.user.id;
@@ -75,7 +75,7 @@ exports.createCourse=async (req,res)=>{
 
         //Entering this course entry in category DB array
         const updateCategoryRes=await Category.findByIdAndUpdate(categoryRes._id,{$push:{courses:courseRes._id}},{new:true}).populate('courses').exec();
-        console.log("updatedCategoryRes==>",updateCategoryRes);
+        // console.log("updatedCategoryRes==>",updateCategoryRes);
 
 
         //First finding the Instructor up and Entering this course in the corresponding instructors DB courses array
@@ -117,11 +117,11 @@ exports.createCourse=async (req,res)=>{
 
 exports.updateCourse=async(req,res)=>{
     try{
-        console.log("update course is called");
+        // console.log("update course is called");
         const {courseId,title,description,price,category,tags,benefits,requirements,status}=req.body;
         const imgFile=req.files?.imgFile;
         const userId=req.user.id;
-        console.log("category==>",category);
+        // console.log("category==>",category);
 
         const instructorDetails=await User.findById(req.user.id);
     
@@ -136,7 +136,7 @@ exports.updateCourse=async(req,res)=>{
         }   
 
         const coursechk=await Course.findById(courseId).populate("category");
-        console.log("coursechk==>",coursechk);
+        // console.log("coursechk==>",coursechk);
         if(!coursechk)
         {
             return res.status(400).json(
@@ -148,7 +148,7 @@ exports.updateCourse=async(req,res)=>{
         }
 
         let categoryUpdate=false;
-        console.log("coursechk.category.name==>",coursechk.category.name);
+        // console.log("coursechk.category.name==>",coursechk.category.name);
         if(coursechk.category.name!==category)
             categoryUpdate=true;
 
@@ -188,7 +188,7 @@ exports.updateCourse=async(req,res)=>{
             )  
         }
 
-        console.log("updateing course");
+        // console.log("updateing course");
 
         const courseRes=await Course.findByIdAndUpdate(courseId,{
             title:title,
@@ -207,7 +207,7 @@ exports.updateCourse=async(req,res)=>{
             }
         }).populate("category");
 
-        console.log("course updated");
+        // console.log("course updated");
         //Entering this course entry in category DB array if and only if CATEGORY CHANGES
         if(categoryUpdate)
         {
@@ -236,7 +236,7 @@ exports.updateCourse=async(req,res)=>{
 exports.deleteCourse=async (req,res)=>{
     try{
         const {courseId}=req.body;
-        console.log("courseId in deleteCourse==>",courseId)
+        // console.log("courseId in deleteCourse==>",courseId)
         
         const courseRes=await Course.findByIdAndDelete(courseId).populate("category");
 

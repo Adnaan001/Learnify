@@ -29,9 +29,9 @@ export const CourseDetails=()=>{
     const [course,setCourse]=useState({});
     const location=useLocation();
 
-    console.log("user==>",user)
+    // console.log("user==>",user)
 
-    console.log("Course Params==>",params);
+    // console.log("Course Params==>",params);
 
     useEffect(()=>{
         async function fetchCourseDetails(){

@@ -49,11 +49,11 @@ export function createCourse(formData){
 
 export function updateCourse(formData,navigate){
     return async(dispatch)=>{
-        console.log("updatecourseAPI Called....");
+        // console.log("updatecourseAPI Called....");
         const toastId=toast.loading('Loading...');
         try{
             const result=await apiConnector('PUT',UPDATE_COURSE,formData);
-            console.log("result in update course is ==>",result);
+            // console.log("result in update course is ==>",result);
 
             if(navigate){
                 navigate('/dashboard/my-courses');
@@ -86,7 +86,7 @@ export function deleteCourse(courseId,setCourseDeleteModal){
         const toastId=toast.loading("Loading.....");
         try{
             const result= await apiConnector('DELETE',DELETE_COURSE,{courseId});
-            console.log("deleteCourse Result==>",result);
+            // console.log("deleteCourse Result==>",result);
             toast.success(result.data?.message);
             setCourseDeleteModal("");
             
@@ -132,8 +132,8 @@ export async function getUserEnrolledCourses(){
 export async function getCourseDetails(courseId){
     const toastId=toast.loading("Loading...");
     try{
-        console.log("getCourse apiconnector called....");
-        console.log("courseid==>",courseId)
+        // console.log("getCourse apiconnector called....");
+        // console.log("courseid==>",courseId)
         const result=await apiConnector('POST',GET_COURSE_DETAILS,{courseId});
         // toast.success(result.data?.message);
         return result.data?.Response;
@@ -147,7 +147,7 @@ export async function getCourseDetails(courseId){
 
 export async function getCourseProgress(courseId){
     try{
-        console.log("in getCourseProgress api....")
+        // console.log("in getCourseProgress api....")
         const result=await apiConnector("POST",GET_COURSE_PROGRESS,{courseId});
 
         // console.log("result of getCourseProgress==>",result)
@@ -174,7 +174,7 @@ export function setCourseProgress(courseId,subSectionId){
 
 export function createSection(sectionName,courseId){
     return async(dispatch)=>{
-        console.log("crete setion API called")
+        // console.log("crete setion API called")
         const toastId=toast.loading('Loading...');
         try{
             const result=await apiConnector('POST',CREATE_SECTION,{sectionName,courseId});
@@ -194,7 +194,7 @@ export function createSection(sectionName,courseId){
 
 export function updateSection(sectionName,sectionId,courseId){
     return async(dispatch)=>{
-        console.log("update section API called")
+        // console.log("update section API called")
         const toastId=toast.loading('Loading...');
         try{
             const result=await apiConnector('PUT',UPDATE_SECTION,{sectionName,sectionId,courseId});
@@ -214,7 +214,7 @@ export function updateSection(sectionName,sectionId,courseId){
 
 export function deleteSection(sectionId,courseId,setSectionModal){
     return async(dispatch)=>{
-        console.log("update section API called")
+        // console.log("update section API called")
         const toastId=toast.loading('Loading...');
         try{
             const result=await apiConnector('DELETE',DELETE_SECTION,{sectionId,courseId});
@@ -234,11 +234,11 @@ export function deleteSection(sectionId,courseId,setSectionModal){
 
 export function createSubSection(formData,setModal,callback){
     return async(dispatch)=>{
-        console.log("crete subSection API called")
+        // console.log("crete subSection API called")
         const toastId=toast.loading('Loading...');
         try{
             const result=await apiConnector('POST',CREATE_SUBSECTION,formData);
-            console.log("result in create subSection is ==>",result);
+            // console.log("result in create subSection is ==>",result);
             dispatch(setCourse(result.data?.courseResponse));
             toast.success(result.data?.message);
             setModal(false);
@@ -266,11 +266,11 @@ export function createSubSection(formData,setModal,callback){
 
 export function updateSubSection(formData,setModal){
     return async(dispatch)=>{
-        console.log("updating subSection API called")
+        // console.log("updating subSection API called")
         const toastId=toast.loading('Loading...');
         try{
             const result=await apiConnector('PUT',UPDATE_SUBSECTION,formData);
-            console.log("result in update subSection is ==>",result);
+            // console.log("result in update subSection is ==>",result);
             dispatch(setCourse(result.data?.courseResponse));
             toast.success(result.data?.message);
             setModal(false);
@@ -293,7 +293,7 @@ export function updateSubSection(formData,setModal){
 
 export function deleteSubSection(subSectionId,sectionId,courseId,setSubSectionDeleteModal){
     return async(dispatch)=>{
-        console.log("update section API called")
+        // console.log("update section API called")
         const toastId=toast.loading('Loading...');
         try{
             const result=await apiConnector('DELETE',DELETE_SUBSECTION,{subSectionId,sectionId,courseId});

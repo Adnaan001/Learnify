@@ -23,7 +23,7 @@ export const RenderSteps=()=>{
 
     const {step}=useSelector((state)=>state.course);
 
-    console.log("step is==>",step);
+    // console.log("step is==>",step);
     return(
         <div className="flex flex-col w-[60%]">
             <div className="flex gap-2 ml-12">

@@ -32,9 +32,9 @@ export const SignupForm=()=>{
     function submitHandler(e)
     {
         e.preventDefault();
-        console.log("formData after signup==>",formData);
+        // console.log("formData after signup==>",formData);
         dispatch(setSignUpData(formData));
-        console.log("signupData after signup ==>",signupData);
+        // console.log("signupData after signup ==>",signupData);
         const {firstName,lastName,email,password,confirmPassword,accountType}=formData;
         dispatch(signup(firstName,lastName,email,password,confirmPassword,accountType,null,navigate));
     }

@@ -23,7 +23,7 @@ export const InstructorDashboard=()=>{
     useEffect(()=>{
         async function fetchInstructorStats(){
             const result=await getInstructorStats();
-            console.log("result in fetchInstructorStats==>",result?.courseData);
+            // console.log("result in fetchInstructorStats==>",result?.courseData);
             setInstructorStats(result?.courseData);
 
             const result2=await apiConnector("GET",courseEndpoints.GET_INSTRUCTOR_COURSES);
@@ -38,7 +38,7 @@ export const InstructorDashboard=()=>{
 
     useEffect(()=>{
         function getData(){
-            console.log("instructorStats==>",instructorStats)
+            // console.log("instructorStats==>",instructorStats)
             setTotalStudents(instructorStats.reduce((acc,cval)=>acc+cval.totalStudents,0));
             setTotalIncome(instructorStats.reduce((acc,cval)=>acc+cval.totalIncome,0));
         }

@@ -21,7 +21,7 @@ export const VideoDetails=()=>{
 
     const {courseEntireData,courseSectionData,totalNoOfLectures,completedVideos}=useSelector((state)=>state.viewcourse);
 
-    console.log("rendereddd")
+    // console.log("rendereddd")
 
     useEffect(()=>{
         async function setData(){

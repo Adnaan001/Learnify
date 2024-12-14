@@ -8,7 +8,7 @@ import { RatingStars } from "../../components/Common/RatingStars";
 import { useNavigate } from "react-router";
 
 export const CourseSlider=({categoryData})=>{
-    console.log("catalogPagedataa==>",categoryData)
+    // console.log("catalogPagedataa==>",categoryData)
     const navigate=useNavigate();
     return (
         <div className="my-12">

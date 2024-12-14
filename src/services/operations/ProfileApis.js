@@ -61,7 +61,7 @@ export function changePassword(currentPassword,newPassword){
         const toastId=toast.loading("Loading...");
         try{
             const result=await apiConnector("PUT",CHANGE_PASSWORD,{currentPassword,newPassword});
-            console.log("Result from Change password==>",result);
+            // console.log("Result from Change password==>",result);
             toast.success(result.data?.message)
         }catch(e){
             toast.error(e.response?.data?.message || e.message);
@@ -76,7 +76,7 @@ export function deleteAccount(){
         const toastId=toast.loading("Loading...");
         try{
             const result=await apiConnector("DELETE",DELETE_ACCOUNT);
-            console.log("Result from Delete account==>",result);
+            // console.log("Result from Delete account==>",result);
             dispatch(setToken(null));
             dispatch(setUser(null));
             toast.success(result.data?.message);

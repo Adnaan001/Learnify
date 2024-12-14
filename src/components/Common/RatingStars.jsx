@@ -28,10 +28,10 @@ export const RatingStars=({courseId,className,ratingLength})=>{
     },[])
 
     useEffect(()=>{
-        console.log("average==>",average);
+        // console.log("average==>",average);
         const wholeStars=average===undefined ? 0 : Math.floor(average);
-        console.log("wholeSatrs==>",wholeStars)
-        console.log("for avg==>",average,"this is==>",Number.isInteger(average));
+        // console.log("wholeSatrs==>",wholeStars)
+        // console.log("for avg==>",average,"this is==>",Number.isInteger(average));
         setStarCount({
             full:wholeStars,
             half:Number.isInteger(average) || average === undefined ? 0 : 1,
@@ -39,9 +39,9 @@ export const RatingStars=({courseId,className,ratingLength})=>{
         })
     },[average])
 
-    useEffect(()=>{
-        console.log("starCOunt==>",starCount)
-    },[starCount])
+    // useEffect(()=>{
+    //     console.log("starCOunt==>",starCount)
+    // },[starCount])
 
     return(
         <div className={`${className} flex items-center`}>

@@ -5,8 +5,8 @@ import { TbEdit } from "react-icons/tb";
 
 export const MyProfile=()=>{
     const {user}=useSelector((state)=>state.profile);
-    console.log("user in myprofile==>",user);
-    console.log("user.personalDetails",user.personalDetails.dob);
+    // console.log("user in myprofile==>",user);
+    // console.log("user.personalDetails",user.personalDetails.dob);
     const personalData=[
         {
             title:"First Name",

@@ -8,7 +8,7 @@ exports.contactUs=async (req,res)=>{
     try{
         const {firstName,lastName,email,callingcode,phone,message}=req.body;
         const response=await mailsender(process.env.MAIL_USER,`New Message from ${firstName} ${lastName}`,message,email);
-        console.log(response);
+        // console.log(response);
         const userResponse=await mailsender(email,`Contact Form Submission Confirmation`,contactSubmission(firstName,lastName,email,callingcode,phone,message))
 
         return res.status(200).json(

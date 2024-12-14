@@ -12,7 +12,7 @@ const CourseProgress = require("../models/courseprogress");
 
 exports.capturePayment=async (req,res)=>{
     try{
-        console.log("capture Payment called");
+        // console.log("capture Payment called");
         const {courses}=req.body;
         const userId=req.user.id;
 

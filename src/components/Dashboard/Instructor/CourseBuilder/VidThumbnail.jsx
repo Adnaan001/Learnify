@@ -32,7 +32,7 @@ export const VidThumbnail=({label,setValue,getValues,register,editLecture,viewMo
 
     //this useEffect is whenever vidFile is changeing you are setting it in the form's vidFile
     useEffect(()=>{
-        console.log("now the vidFile is ==>",vidFile)
+        // console.log("now the vidFile is ==>",vidFile)
         setValue("vidFile",vidFile);
         return ()=>{
             URL.revokeObjectURL(vidFile.preview);

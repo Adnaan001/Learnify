@@ -35,11 +35,11 @@ export async function buyCourse(token,courses,userDetails,navigate,dispatch){
 
         const orderResponse=await apiConnector("POST",CAPTURE_PAYMENT,{courses});
 
-        console.log("orderResponse==>",orderResponse);
+        // console.log("orderResponse==>",orderResponse);
         if(!orderResponse.data.success)
             throw new Error(orderResponse.data.message);
 
-        console.log("orderResponse.data.message.id==>",orderResponse.data.message.amount)
+        // console.log("orderResponse.data.message.id==>",orderResponse.data.message.amount)
         const options = {
             key: import.meta.env.VITE_RAZORPAY_KEY, 
             amount: orderResponse.data.message.amount,
@@ -73,8 +73,8 @@ export async function buyCourse(token,courses,userDetails,navigate,dispatch){
 
 async function sendPaymentSuccessEmail(response,amount,token){
     try{
-        console.log("sendPaymentSuccessEmail called.....")
-        console.log("response.razorpay_order_id==>",response.razorpay_order_id)
+        // console.log("sendPaymentSuccessEmail called.....")
+        // console.log("response.razorpay_order_id==>",response.razorpay_order_id)
         await apiConnector("POST",SEND_PAYMENT_SUCCESS_EMAIL,{
             orderId:response.razorpay_order_id,
             paymentId:response.razorpay_payment_id,
@@ -89,7 +89,7 @@ async function sendPaymentSuccessEmail(response,amount,token){
 async function verifyPayment(bodyData,token,navigate,dispatch){
     const toastId=toast.loading("Verifying Payment....");
     try{
-        console.log("bodyData==>",bodyData);
+        // console.log("bodyData==>",bodyData);
         const response=await apiConnector("POST",VERIFY_PAYMENT,bodyData);
         toast.success("Payment Successful, you are added to the course");
 
