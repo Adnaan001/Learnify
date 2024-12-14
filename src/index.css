@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,body{
+  overflow-x: hidden;
+}
+*{
+  font-family: "Inter", sans-serif;
+  /* border: 2px solid red; */
+}
+
+.completed{
+  background-color:#3a83f8;
+}
+
+/* .dropDownOpen{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.dropDownClose{
+  transform: translateY(-5%);
+  opacity: 0;
+} */

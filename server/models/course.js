@@ -1,0 +1,85 @@
+const mongoose=require('mongoose');
+const { isInstructor } = require('../middlewares/auth');
+
+const courseSchema=new mongoose.Schema(
+    {
+        title:{
+            type:String,
+            required:true
+        },
+        description:{
+            type:String,
+            required:true
+        },
+        thumbnail:{
+            type:String,
+            required:true
+        },
+        price:{
+            type:Number,
+            required:true
+        },
+        tags:{
+            type:String,
+            required:true
+        },
+        category:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'Category'
+        },
+        status:{
+            type:String,
+            required:true
+        },
+        section:[
+            {
+                type:mongoose.Schema.Types.ObjectId,
+                ref:'Section'
+            }   
+        ],
+        benefits:{
+            type:String,
+            required:true
+        },
+        requirements:{
+            type:String,
+            required:true
+        },
+        ratingAndReview:[
+            {
+                type:mongoose.Schema.Types.ObjectId,
+                ref:'RatingAndReview'
+            }
+        ],
+        studentsEnrolled:[
+            {
+                type:mongoose.Schema.Types.ObjectId,
+                ref:'User'
+            }
+        ],
+        sold:{
+            type:Number,
+            default:0
+        },
+        progressPercentage:{
+            type:Number,
+            default:0
+        },
+        totalDuration:{
+            type:Number
+        },
+        instructor:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'User'
+        },
+        createdAt:{
+            type:Date,
+            required:true,
+            default:Date.now()
+        },
+
+    }
+)
+
+
+module.exports=mongoose.model('Course',courseSchema);
