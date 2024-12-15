@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { Dbtn } from "../../../Common/Dbtn"
 import { RxCross2 } from "react-icons/rx";
 import { useDispatch, useSelector } from "react-redux";
-import { VidThumbnail } from "./vidThumbnail";
+import { VidThumbnail } from "../../../../../src/components/Dashboard/Instructor/CourseBuilder/VidThumbnail";
 import { createSubSection, updateSubSection } from "../../../../services/operations/CourseApis";
 import toast from "react-hot-toast";
 
