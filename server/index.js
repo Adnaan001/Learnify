@@ -25,7 +25,7 @@ const PORT=process.env.PORT || 4000;
 
 app.use(cors(
     {
-        origin:"https://learnify-qb7xa0poo-adnans-projects-ea0a692d.vercel.app",
+        origin:"https://learnify-2kkrrflgu-adnans-projects-ea0a692d.vercel.app",
         credentials:true
     }
 ));
