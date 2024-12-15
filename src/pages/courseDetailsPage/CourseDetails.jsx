@@ -89,7 +89,7 @@ export const CourseDetails=()=>{
     return(
         <div>
             {
-                Object.keys(course).length === 0 
+                (!course && Object.keys(course).length === 0) 
                 ? (<p>Loading......</p>)
                 : (
                     <div>
