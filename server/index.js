@@ -4,6 +4,7 @@ const app=exp();
 const cookieParser=require('cookie-parser');
 
 const fileupload=require('express-fileupload');
+const path=require('path');
 
 const cors=require("cors");
 
@@ -16,7 +17,7 @@ app.use(cookieParser());
 app.use(fileupload(
     {
         useTempFiles:true,
-        tempFileDir:'/temp/'
+        tempFileDir: path.join(__dirname, 'uploads', 'temp')
     }
 ));
   
