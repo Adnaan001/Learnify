@@ -55,7 +55,7 @@ export const ReviewSlider=()=>{
                                     <div>
                                         <p className="text-white mt-4">{review?.review}</p>
                                         <div className="flex items-center gap-1 text-secondary-400">
-                                            <p>{review?.rating}</p>
+                                            <p className="self-end mb-2">{review?.rating}</p>
                                             <ReactStars
                                                 activeColor={"#B186FF"}
                                                 isHalf={true}
